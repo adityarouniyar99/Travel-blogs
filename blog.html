@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Mountain Travel — Demo</title>
+
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog.css"></a>
+  <style>
+    
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f2f2f2;
+}
+
+    a{color:inherit;text-decoration:none}
+
+    .wrap{
+      max-width:var(--container);
+      margin:0 auto;
+      padding:42px 18px;
+    }
+
+  
+  
+    nav {
+  background-color: #0169fa;
+  padding: 15px;
+}
+nav ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  margin-right: 50px;
+  font-size: large;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+    .header {
+  text-align: center;
+  background: url('https://t4.ftcdn.net/jpg/00/99/00/15/240_F_99001587_atLjVZf7eBpvgfWnJdGOcKTjh9WXM7em.jpg') no-repeat center center/cover;
+  color: white;
+  padding: 100px 20px;
+}
+.header h3 {
+  font-size: 48px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+    .eyebrow{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      color:var(--meta);
+      margin-bottom:14px;
+    }
+    .title{
+      font-family:"Playfair Display", serif;
+      font-size:48px;
+      letter-spacing:-0.4px;
+      line-height:1.02;
+      margin-bottom:18px;
+      color:var(--text);
+      text-wrap:balance;
+    }
+    .logo-badge{
+      display:inline-block;
+      margin-top:8px;
+      background:rgba(0,0,0,0.45);
+      padding:10px 16px;
+      border-radius:6px;
+      border:2px solid rgba(255,255,255,0.04);
+      color:var(--meta);
+      font-size:13px;
+    }
+
+    /* Section blocks: alternating image + text with red outline box */
+    .section{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:36px;
+      align-items:center;
+      padding:84px 18px;
+      max-width:var(--container);
+      margin:0 auto;
+    }
+    .section.inverse{direction:ltr}
+    .section .photo{
+      width:100%;
+      height:340px;
+      background:#111;
+      border-radius:4px;
+      overflow:hidden;
+      box-shadow:0 18px 40px rgba(0,0,0,0.5);
+    }
+    .section .photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+    .section .content{
+      position:relative;
+      padding:18px 24px;
+    }
+    .boxed{
+      display:inline-block;
+      padding:28px 26px;
+      border:4px solid var(--accent);
+      max-width:520px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+      box-shadow:0 8px 36px rgba(0,0,0,0.6);
+      color:var(--text);
+    }
+    .boxed h3{
+      font-family:"Playfair Display", serif;
+      font-size:26px;
+      margin-bottom:12px;
+      color:var(--text);
+    }
+    .boxed p{font-size:14px;color:var(--meta);margin-bottom:14px}
+    
+    /* Alternate layout (image on right) */
+    .section.alt{grid-template-columns:1fr 1fr}
+    .section.alt .photo{order:2}
+    .section.alt .content{order:1;text-align:right}
+    .section.alt .boxed{margin-left:auto}
+
+    /* Stats band */
+    .stats-band{
+      background:var(--muted);
+      color:#e8f0ec;
+      padding:46px 18px;
+      text-align:center;
+    }
+    .stats-band .inner{
+      max-width:var(--container);
+      margin:0 auto;
+    }
+    .stats-band h2{font-family:"Playfair Display";margin-bottom:12px;font-size:26px;color:#f3fbf9}
+    .stats-band p{font-size:13px;color:rgba(255,255,255,0.8);max-width:820px;margin:0 auto 18px}
+
+    .stats-grid{
+      display:flex;
+      gap:18px;
+      justify-content:center;
+      margin-top:18px;
+      flex-wrap:wrap;
+    }
+    .stat{
+      width:130px;
+      padding:18px 6px;
+      text-align:center;
+    }
+    .stat .num{
+      font-size:40px;
+      font-weight:800;
+      color:var(--accent);
+      margin-bottom:6px;
+    }
+    .stat small{display:block;font-size:12px;color:#edf6f4;letter-spacing:2px;text-transform:uppercase}
+
+    /* Contact area */
+    .contact{
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:28px;
+      align-items:center;
+      padding:68px 18px 120px;
+      max-width:var(--container);
+      margin:0 auto;
+    }
+    .contact .contact-box{
+      border:4px solid var(--accent);
+      padding:28px;
+      max-width:520px;
+      background:var(--card-bg);
+    }
+    .contact .contact-box h3{font-size:22px;margin-bottom:10px}
+    .contact .contact-box address{font-style:normal;color:var(--meta);line-height:1.6;font-size:14px}
+    .campfire{
+      width:100%;
+      height:320px;
+      border-radius:6px;
+      overflow:hidden;
+      box-shadow:0 18px 60px rgba(0,0,0,0.6);
+    }
+    .campfire img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* Footer social */
+    .socials{margin-top:12px;display:flex;gap:12px}
+    .socials a{width:34px;height:34px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.04);font-size:13px;color:var(--accent)}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero .inner{padding:56px 14px 80px}
+      .title{font-size:36px}
+      .section{grid-template-columns:1fr;gap:24px;padding:36px 14px}
+      .section.alt .content{text-align:left}
+      .contact{grid-template-columns:1fr; padding:36px 14px 80px}
+      .campfire{height:260px}
+      .stat{width:110px}
+      header.site-nav{top:8px}
+    }
+    @media (max-width:480px){
+      .title{font-size:28px}
+      .hero{min-height:520px;background-position:center -40px}
+      .hero .inner{padding:30px 14px 60px}
+      .logo-badge{font-size:12px;padding:8px 12px}
+      .stat .num{font-size:32px}
+    }
+
+    .read-more-btn{
+  display:inline-block;
+  padding:10px 20px;
+  font-weight:600;
+  font-size:14px;
+  border:2px solid #cf2626;   /* Accent color */
+  color:#cf2626;
+  background:transparent;
+  border-radius:4px;
+  transition:0.35s ease;
+  text-decoration:none;
+  letter-spacing:0.5px;
+}
+
+/* Hover Effect */
+.read-more-btn:hover{
+  background:#cf2626;
+  color:#fff;
+  transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(207,38,38,0.4);
+}
+footer {
+  background-color: #1a73e8;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+  </style>
+  
+</head>
+<body>
+
+  <header class="site-nav" aria-hidden="false">
+   <nav>
+  <ul>
+    <li><a href="PROJECT1.html">Home</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="login.html">Login</a></li>
+  </ul>
+</nav>
+  </header>
+  <div class="header">
+  <h3>Join us as we explore Nepal — a land of mountains, culture, and unforgettable adventures</h3>
+</div>
+
+  <!-- HERO -->
+  
+
+  <!-- First content block -->
+  <section class="section">
+    <div class="photo" aria-hidden="true">
+      <img src="https://media.istockphoto.com/id/499654668/photo/sunset-over-patan-durbar-square-in-kathmandu-nepal.jpg?s=612x612&w=0&k=20&c=EgIqUy0EdoZPiaq_8sE2AXbgmMihZRpxgo638hzI4Hg=" alt="Starry peaks at night">
+    </div>
+
+    <div class="content">
+      <div class="boxed">
+        <h3>Kathmandu</h3>
+        <p>Kathmandu feels like a city that breathes history in every corner. Ancient temples rise out of busy streets, prayer flags flutter over old rooftops, and the smell of incense moves through the air like a quiet rhythm. The city is crowded, yes, but it’s alive — with culture, stories, and people from all walks of life. Thamel brings music, warm lights, and endless tiny shops, while places like Swayambhu and Pashupatinath remind you how old and sacred this land truly is. Kathmandu doesn’t just welcome travelers — it pulls them into its heartbeat.</p>
+        <a href="kathmandu.html" class="read-more-btn">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Second block (image right) -->
+  <section class="section alt">
+    <div class="content">
+      <div class="boxed">
+        <h3>Pokhara</h3>
+        <p>Pokhara is like taking a deep breath after a long day. Everything slows down here. The mountains feel close enough to touch, especially in the early morning when the peaks glow golden. Phewa Lake holds the sky in its reflection, and small boats drift gently across the water. From lakeside walks to paragliding above green valleys, Pokhara feels dreamy, calming, and somehow familiar — the kind of place where you sit, watch the sunset, and forget about time for a little while.</p>
+        <a href="pokhara.html" class="read-more-btn">Read More</a>
+      </div>
+    </div>
+
+    <div class="photo" aria-hidden="true">
+      <img src="https://cdn.kimkim.com/files/a/content_articles/featured_photos/0a99949f58bc92145369e8363c64c33bfd85f819/big-68acc559aad8def0f326f4d62e8faf78.jpg" alt="Snow-clad Italian peaks">
+    </div>
+  </section>
+
+  <!-- Third block -->
+  <section class="section">
+    <div class="photo" aria-hidden="true">
+      <img src="https://media.istockphoto.com/id/519457671/photo/man-hiker-with-arms-raised-annapurna-trek-nepal.jpg?s=612x612&w=0&k=20&c=t2mjC6JGeg5r8iwg9m_d-5vw-FS-lApiJQjJT4dy3WE=" alt="Sunset over ridge">
+    </div>
+
+    <div class="content">
+      <div class="boxed">
+        <h3>Mustang</h3>
+        <p>Mustang is wild beauty — raw, rugged, and breathtaking in a way that feels ancient. Wind-carved cliffs, endless valleys, and quiet stone villages create landscapes that look like they belong in a forgotten world. Lo Manthang carries a history that is both mysterious and proud, with traditions kept alive for centuries. The silence in Mustang has its own voice — deep, powerful, something that makes you think about how big the world really is. Traveling here isn’t just a trip — it’s an experience that stays under your skin.</p>
+        <a href="mustang.html" class="read-more-btn">Read More</a>
+
+      </div>
+    </div>
+  </section>
+
+   <section class="section alt">
+    <div class="content">
+      <div class="boxed">
+        <h3>Janakpur</h3>
+        <p>Janakpur carries stories — especially the story of Sita and Lord Ram, a love tale that echoes through time. The city glows with colorful art, lively festivals, and warm-hearted people. Janaki Mandir stands like a palace of devotion, shining with marble arches and delicate carvings. Pilgrims come here with hope, prayers, and songs, filling the city with a gentle spiritual energy. Janakpur feels both holy and human — a place of devotion, culture, and memory.</p>
+        <a href="janakpur.html" class="read-more-btn">Read More</a>
+      </div>
+    </div>
+
+    <div class="photo" aria-hidden="true">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Inside_view_of_the_Janki_Mandir_of_Janakpur%2C_Nepal..JPG/1024px-Inside_view_of_the_Janki_Mandir_of_Janakpur%2C_Nepal..JPG" alt="Snow-clad Italian peaks">
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="photo" aria-hidden="true">
+      <img src="https://media.istockphoto.com/id/517194354/photo/wild-landscape-with-asian-rhinoceroses.jpg?s=612x612&w=0&k=20&c=VIvJlrCyuCmWXSXIRaE4fEt3losB-azWz3FoSfwPUVA=" alt="Starry peaks at night">
+    </div>
+
+    <div class="content">
+      <div class="boxed">
+        <h3>Chitwan</h3>
+        <p>Chitwan is where the jungle breathes. Tall grass fields, wide rivers, and forests full of life — from rare birds to one-horned rhinos. The days here feel warm and slow, like golden sunlight drifting through leaves. Jungle safaris take you deep into nature, and evenings end with traditional Tharu dance near the fire. Chitwan is adventure, yes — but it’s also peace. A reminder that the wild is beautiful, powerful, and worth protecting.</p>
+        <a href="chitwan.html" class="read-more-btn">Read More</a>
+      </div>
+    </div>
+  </section>
+
+ 
+<footer>
+  <p>© 2025 Travel Blog | Designed by Students of Chitkara university | Group - G8</p>
+</footer>
+
+
+</body>
+</html>

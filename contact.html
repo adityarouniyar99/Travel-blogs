@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Travel Explorer</title>
+  <link rel="stylesheet" href="contact.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+        
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f2f2f2;
+    }
+
+    nav {
+      background-color: #0169fa;
+      padding: 15px;
+    }
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin-right: 50px;
+      font-size: large;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+
+    .sub {
+      font-size: 20px;
+    }
+    /* Main layout */
+    .contact-wrapper {
+      max-width: 1100px;
+      margin: 60px auto;
+      display: grid;
+      gap: 40px;
+      grid-template-columns: 1fr 1fr;
+      padding: 0 20px;
+    }
+
+    /* Form */
+    .contact-form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: rgba(0,0,0,0.1) 0px 4px 18px;
+    }
+    .contact-form h2 { margin-bottom: 20px; }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 14px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+    }
+    button {
+      width: 100%;
+      padding: 15px;
+      background: #111;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.05rem;
+      cursor: pointer;
+      transition: .3s;
+    }
+    button:hover { background: #f4d26d; color: #111; }
+
+    /* Social Section */
+    .contact-social {
+      background: #fff;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: rgba(0,0,0,0.1) 0px 4px 18px;
+      text-align: center;
+    }
+    .contact-social h2 { margin-bottom: 20px; }
+
+    .social {
+      display: block;
+      margin: 12px auto;
+      padding: 15px;
+      border-radius: 50px;
+      font-weight: 500;
+      text-decoration: none;
+      width: 80%;
+      transition: .3s;
+    }
+
+    /* Button Colors */
+    .whatsapp { background: #25D366; color: #fff; }
+    .whatsapp:hover { opacity: .85; }
+
+    .instagram { background: #E1306C; color: #fff; }
+    .instagram:hover { opacity: .85; }
+
+    .gmail { background: #D44638; color: #fff; }
+    .gmail:hover { opacity: .85; }
+
+    .call { background: #111; color: #fff; }
+    .call:hover { background: #f4d26d; color: #111; }
+
+    /* Responsive */
+    @media(max-width: 850px) {
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+    /* ========== Contact page additions (append here) ========== */
+
+    /* palette: soft cream (#f5f3ef), charcoal (#111), warm accent (#d8b76a), mute greys */
+    .hero-contact {
+      background: linear-gradient(180deg, rgba(17,17,17,0.35) 0%, rgba(17,17,17,0.25) 100%), url("https://media.istockphoto.com/id/623985488/photo/prayer-flags-and-mt-annapurna-i-background.jpg?s=612x612&w=0&k=20&c=jvv-kvnsUuq0duGnoY8Ut8jkwX2giq-dlqSREZj0Fw0=") center/cover no-repeat;
+      color: #fff;
+      padding: 70px 20px;
+      text-align: center;
+    }
+    .hero-contact .hero-inner { max-width: 1000px; margin: 0 auto; }
+    .hero-contact h1 { margin: 0 0 10px; font-size: clamp(1.6rem, 2.5vw, 2.6rem); line-height:1.08; font-weight:700; }
+    .hero-contact .sub { margin:0; opacity:0.95; font-weight:400; }
+
+    /* main layout */
+    .contact-main { max-width: 1200px; margin: 36px auto; padding: 0 20px 60px; display: grid; gap: 28px; }
+
+    /* two-column grid for top area */
+    .contact-grid { display: grid; grid-template-columns: 1fr 360px; gap: 24px; align-items:start; }
+
+    /* cards */
+    .card { background: #fff; border-radius: 12px; padding: 22px; box-shadow: 0 8px 30px rgba(16,16,16,0.06); }
+    .muted { color: #6b6b6b; }
+    .small { font-size: 0.9rem; }
+
+    /* form specifics */
+    .form-card label { display:block; margin-top: 12px; font-weight:600; font-size:0.95rem; color:#333; }
+    .form-card input[type="text"],
+    .form-card input[type="email"],
+    .form-card textarea {
+      width:100%; padding:14px 16px; margin-top:8px; border-radius:10px; border:1px solid #e7e4df; font-size:1rem;
+      background: #fbfbfb;
+      box-sizing: border-box;
+    }
+    .row.small { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:8px; }
+
+    /* buttons */
+    .btn-primary {
+      display:inline-block; margin-top:16px; padding:14px 18px; border-radius:10px; border:none; cursor:pointer;
+      background: linear-gradient(90deg,#111,#222); color:#fff; width:100%; font-weight:700; font-size:1rem;
+      box-shadow: 0 6px 18px rgba(17,17,17,0.08);
+    }
+    .btn-outline {
+      background: transparent; border:1px solid #e1d8c1; padding:10px 14px; border-radius:10px; cursor:pointer;
+    }
+
+    /* quick contact */
+    .contact-card .quick-row { display:flex; justify-content:space-between; padding:8px 0; align-items:center; }
+    .contact-card a { color:#111; text-decoration:none; font-weight:600; }
+    .contact-card hr { border:none; border-top:1px solid #f0eee9; margin:16px 0; }
+
+    /* social buttons grid */
+    .social-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px; }
+    .social { display:inline-flex; align-items:center; justify-content:center; padding:12px 10px; border-radius:999px; font-weight:700; text-decoration:none; color:#fff; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+    .whatsapp { background:#25D366; }
+    .instagram { background: linear-gradient(45deg,#f58529,#dd2a7b); }
+    .gmail { background:#D44638; }
+    .call { background:#111; }
+
+
+
+    footer {
+      background-color: #1a73e8;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+
+
+    /* small screens — mobile-first improvements */
+    @media (max-width:1100px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .map-team { grid-template-columns: 1fr; }
+      .contact-card, .team-card { order: 2; }
+      .form-card { order: 1; }
+    }
+    @media (max-width:600px) {
+      .contact-main { padding: 0 14px 40px; }
+      .social-grid { grid-template-columns: 1fr; }
+      .hero-contact { padding: 48px 16px; }
+      .team-person img { width:56px; height:56px; }
+      .btn-primary { padding: 12px; font-size: 0.98rem; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav>
+  <ul>
+    <li><a href="PROJECT1.html">Home</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="login.html">Login</a></li>
+  </ul>
+</nav>
+
+<header class="hero-contact">
+  <div class="hero-inner">
+    <h1>Let’s plan your next trip — we’ll make it easy.</h1>
+    <p class="sub">Questions, collabs, trip plans, or story pitches — pick any way to reach us. </p>
+  </div>
+</header>
+
+<main class="contact-main">
+
+  <section class="contact-grid">
+
+    <!-- FORM CARD -->
+    <article class="card form-card" aria-labelledby="form-title">
+      <h2 id="form-title">Send a message</h2>
+
+      <form id="contactForm" novalidate>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Your full name" required autocomplete="name">
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@domain.com" required autocomplete="email">
+
+        <label for="subject">Subject</label>
+        <input id="subject" name="subject" type="text" placeholder="Trip help / Collaboration / Feedback" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" placeholder="Tell us what you need — the more details, the better." required></textarea>
+
+        <div class="row small">
+          <label class="inline">
+            <input id="updates" type="checkbox" checked> Send me travel tips & news
+          </label>
+          <div class="muted small" style="text-align:right">GDPR-friendly. We respect your inbox.</div>
+        </div>
+
+        <button type="submit" class="btn-primary">Send message</button>
+      </form>
+
+      <div id="formToast" class="toast" role="status" aria-live="polite" hidden>Message sent — we’ll reply soon ✨</div>
+    </article>
+
+    <!-- QUICK CONTACT & SOCIAL -->
+    <aside class="card contact-card" aria-labelledby="quick-title">
+      <h2 id="quick-title">Quick contact</h2>
+
+      <div class="quick-list">
+        <div class="quick-row">
+          <strong>Phone</strong>
+          <a href="tel:+917870363115">+91 7870363115</a>
+        </div>
+        <div class="quick-row">
+          <strong>Email</strong>
+          <a href="mailto:travelexplorer@gmail.com">travelexplorer@gmail.com</a>
+        </div>
+        <div class="quick-row">
+          <strong>Office</strong>
+          <span>Chitkara University, Kalujhanda</span>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <h3>One-tap reach</h3>
+      <div class="social-grid">
+        <a class="social whatsapp" href="https://wa.me/917870363115" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="social gmail" href="sahilchry35@gmail.com">Email</a>
+      </div>
+
+      <hr>
+
+      
+    </aside>
+
+  </section>
+
+
+
+  
+
+</main>
+
+<footer>
+  <p>© 2025 Travel Blog | Designed by Students of Chitkara university | Group - G8</p>
+</footer>
+
+
+</body>
+</html>

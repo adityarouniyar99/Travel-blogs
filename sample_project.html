@@ -1,0 +1,231 @@
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Explorer</title>
+<link rel="stylesheet" href="PROJECT1.CSS">
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f2f2f2;
+}
+
+nav {
+  background-color: #0169fa;
+  padding: 15px;
+}
+nav ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  margin-right: 50px;
+  font-size: large;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.header {
+  text-align: center;
+  background: url('https://thenepalicomment.com/wp-content/uploads/2023/12/Nepal-Climate.jpg') no-repeat center center/cover;
+  color: white;
+  padding: 100px 20px;
+}
+.header h1 {
+  font-size: 48px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+.pradeep {
+  text-align: center;
+  color: white;
+}
+.pradeep h3 {
+  font-size: 40px;
+  background-color: rgba(50, 150, 200, 0.815);
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+
+}
+.destinations {
+  padding: 40px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.destination {
+  background-color: white;
+  border-radius: 10px;
+  width: 250px;
+  margin: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+#destination {
+  text-decoration: none;
+  color : black;
+}
+.destination img {
+  width: 100%;
+  border-radius:10px 10px 0 0;
+}
+.destination h3 {
+  margin: 10px 0;
+}
+.destination p {
+  font-size: 14px;
+  padding: 0 10px 20px;
+}
+.destination:hover {
+  transform: scale(1.02);
+}
+footer {
+  background-color: #1a73e8;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+.back-ground{
+  background-color: #1a73e8;
+}
+.images{
+  text-align: center;
+}
+
+.slider {
+    width: 100%;
+    height: 450px;
+    position: relative;
+
+    overflow: hidden;
+}
+
+/* Style each slide */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: slideShow 12s infinite;  /* 3 images × 4s = 12s cycle */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Text */
+.slider-text {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 20px 30px;
+    font-size: 3rem;
+    font-weight: bold;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+/* Animation timings for each slide */
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 4s; }
+.slide:nth-child(3) { animation-delay: 8s; }
+
+/* Fade animation */
+@keyframes slideShow {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    33% { opacity: 1; }
+    43% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+
+
+</style>
+</head>
+<body>
+   
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="login.html">Login</a></li>
+  </ul>
+</nav>
+
+<div class="slider">
+    <div class="slide fade">
+        <img src="/projects/sample img/istock_848682628_pokhara_3000x1000.jpg\">
+    </div>
+
+    <div class="slide fade">
+        <img src="/projects/sample img/nepal-photography-tour.jpg">
+    </div>
+
+    <div class="slide fade">
+        <img src="/projects/sample img/shutterstock_653749978.jpg">
+    </div>
+
+    <div class="slider-text">Explore the beauty of Nepal</div>
+</div>
+
+<div class="pradeep">
+  <h3>Our Destinations </h3>
+</div>
+
+<div class="destinations">
+  <div class="destination">
+    <a href="kathmandu.html" id="destination"><img src="https://visitsnepal.com/wp-content/uploads/2019/07/Nepal-300x200.jpg" alt="kathmandu">
+    <h3>Kathmandu</h3>
+    <p>"Kathmandu is a vibrant city where ancient traditions, lively festivals, and diverse cultures harmoniously blend amid sacred temples and bustling streets."</p></a>
+  </div>
+  <div class="destination">
+    <a href="pokhara.html" id="destination"><img src="https://cdn.kimkim.com/files/a/content_articles/featured_photos/0a99949f58bc92145369e8363c64c33bfd85f819/big-68acc559aad8def0f326f4d62e8faf78.jpg" alt="Pokhara">
+    <h3>Pokhara</h3>
+    <p>"Pokhara is a serene blend of shimmering lakes, majestic mountains, and a culture rooted in warmth, music, and timeless Nepali traditions."</p></a>
+  </div>
+  <div class="destination">
+
+   <a href="mustang.html" id="destination"><img src="https://media.istockphoto.com/id/519457671/photo/man-hiker-with-arms-raised-annapurna-trek-nepal.jpg?s=612x612&w=0&k=20&c=t2mjC6JGeg5r8iwg9m_d-5vw-FS-lApiJQjJT4dy3WE=" alt="Mustang">
+    <h3>Mustang</h3>
+    <p>"Mustang, Nepal is a mystical land where ancient Tibetan culture thrives amidst dramatic Himalayan landscapes and timeless traditions."</p></a>
+  </div>
+  <div class="destination">
+    <a href="chitwan.html" id="destination"><img src="https://media.istockphoto.com/id/517194354/photo/wild-landscape-with-asian-rhinoceroses.jpg?s=612x612&w=0&k=20&c=VIvJlrCyuCmWXSXIRaE4fEt3losB-azWz3FoSfwPUVA=" alt="Chitwan">
+    <h3>Chitwan</h3>
+    <p>"Chitwan is a vibrant land where rich Tharu traditions meet the wild beauty of lush jungles and timeless rivers."</p></a>
+  </div>
+  <div class="destination">
+    <a href="janakpur.html" id="destination"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Janki_Mandir.JPG/250px-Janki_Mandir.JPG" alt="Janakpur">
+    <h3>Janakpur</h3>
+    <p>"Janakpur, the sacred land of Goddess Sita, beautifully blends spiritual devotion with the vibrant Maithili culture of art, music, and tradition."</p></a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Travel Blog | Designed by Students of Chitkara university | Group - G8</p>
+</footer>
+
+</body>
+</html>
